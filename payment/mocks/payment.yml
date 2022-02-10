@@ -1,0 +1,35 @@
+- description: "Payment: Unknown error (Internal server error)"
+  request:
+    method: [POST]
+    url: ^/payment/pay/[0-2]$
+  response:
+    status: 500
+    latency: 10000
+
+- description: "Payment: Slow payment"
+  request:
+    method: [POST]
+    url: ^/payment/pay/[3-5]$
+  response:
+    status: 200
+    latency: 45000
+
+- description: "Payment: Default"
+  request:
+    method: [POST]
+    url: ^/payment/pay/[6-9]$
+  response:
+    status: 200
+    latency: 800
+- description: "Payment: fast response"
+  request:
+    method: [POST]
+    url: ^/payment/pay/10$
+  response:
+   headers:
+     content-type: application/json
+   status: 200
+   latency: 30
+   body: >
+      [{"createdAt":"2022-02-09T19:51:12.608Z","name":"Charles Rolfson","avatar":"https://cdn.fakercloud.com/avatars/hoangloi_128.jpg","id":"1"},{"createdAt":"2022-02-10T13:55:32.789Z","name":"Melissa Schmeler","avatar":"https://cdn.fakercloud.com/avatars/2fockus_128.jpg","id":"2"}]
+   

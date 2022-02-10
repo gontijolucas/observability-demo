@@ -1,0 +1,5 @@
+Download artifact:
+https://search.maven.org/remotecontent?filepath=io/github/azagniotov/stubby4j/7.5.2/stubby4j-7.5.2.jar
+
+Start stub:
+$ java -jar stubby4j-7.5.2.jar -d data.yml
